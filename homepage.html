@@ -15,4 +15,82 @@
     <input type="date" id="eventDate" required>
     <button type="submit">Create Event</button>
   </form>
+  
+  <h2>Register for an Event</h2>
+  <div id="eventList"></div>
+
+  <br>
+  <a href="index.html">Back to Index</a>
+
+  <script src="js.js"></script>
+    <script>
+    class Event {
+      constructor(title, desc, date) {
+        this.title = title;
+        this.desc = desc;
+        this.date = date;
+        this.students = [];
+      }
+    }
+
+    function loadEvents() {
+      return JSON.parse(localStorage.getItem("events")) || [];
+    }
+
+    function saveEvents(events) {
+      localStorage.setItem("events", JSON.stringify(events));
+    }
+
+    let events = loadEvents();
+
+    function renderEvents() {
+      const list = document.getElementById("eventList");
+      list.innerHTML = "";
+      
+      events.forEach((event, index) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <h3>${event.title}</h3>
+          <p>${event.desc}</p>
+          <p><strong>Date:</strong> ${event.date}</p>
+          <p><strong>Registered:</strong> ${event.students.length} students</p>
+          <button onclick="registerStudent(${index})">Register</button>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    function registerStudent(index) {
+      const name = prompt("Enter your full name:");
+      if (!name) return;
+
+      if (!events[index].students.includes(name)) {
+        events[index].students.push(name);
+        saveEvents(events);
+        alert(`Thank you, ${name}! You are registered for "${events[index].title}".`);
+        renderEvents();
+      } else {
+        alert(`${name}, you are already registered for this event!`);
+      }
+    }
+
+    const form = document.getElementById("eventForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const title = document.getElementById("eventTitle").value;
+      const desc = document.getElementById("eventDesc").value;
+      const date = document.getElementById("eventDate").value;
+
+      events.push(new Event(title, desc, date));
+      saveEvents(events);
+      
+      alert(`Event "${title}" created successfully!`);
+      form.reset();
+      renderEvents();
+    });
+
+    document.addEventListener("DOMContentLoaded", renderEvents);
+  </script>
 </body>
+</html>
