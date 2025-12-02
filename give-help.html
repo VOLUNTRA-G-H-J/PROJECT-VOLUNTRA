@@ -83,6 +83,40 @@
         </div>
     </div>
 
+    <!-- Donate Modal -->
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Make a Donation</h2>
+            <form id="donate-form" class="modal-form">
+                <select id="donate-type" required>
+                    <option value="">Select donation type</option>
+                    <option value="money">Money</option>
+                    <option value="things">Things</option>
+                    <option value="food">Food</option>
+                    <option value="other">Other</option>
+                </select>
+                <div id="money-options" style="display: none;">
+                    <input type="number" id="donate-amount" placeholder="Amount ($)" min="1">
+                    <select id="payment-method">
+                        <option value="">Select payment method</option>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="gcash">GCash</option>
+                        <option value="maya">Maya</option>
+                        <option value="online-bank">Online Bank</option>
+                        <option value="cash">Cash</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div id="item-options" style="display: none;">
+                    <input type="text" id="donate-item" placeholder="What are you donating?">
+                </div>
+                <textarea id="donate-message" placeholder="Optional message..."></textarea>
+                <button type="submit">Submit Donation</button>
+            </form>
+        </div>
+    </div>
+
 
 
 
