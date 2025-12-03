@@ -124,6 +124,42 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Modal functions
+function openCommentModal(index) {
+    // Implement comment modal
+    const modal = document.getElementById('comment-modal');
+    modal.style.display = 'block';
+    // Set data-index
+    modal.setAttribute('data-post-index', index);
+}
+
+function openDonateModal(index) {
+    const modal = document.getElementById('donate-modal');
+    modal.style.display = 'block';
+    modal.setAttribute('data-post-index', index);
+}
+
+function openVolunteerModal(index) {
+    const modal = document.getElementById('volunteer-modal');
+    modal.style.display = 'block';
+    modal.setAttribute('data-post-index', index);
+}
+
+// Show image gallery
+function showImageGallery(images) {
+    const gallery = document.getElementById('image-gallery');
+    gallery.innerHTML = '';
+
+    images.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Image ${index + 1}`;
+        gallery.appendChild(img);
+    });
+
+    document.getElementById('image-modal').style.display = 'block';
+}
+
 
 
 
