@@ -229,4 +229,30 @@ document.getElementById('select-location-btn').addEventListener('click', functio
     document.getElementById('map-modal').style.display = 'block';
     initMap();
 });
+    document.getElementById('search-btn').addEventListener('click', function() {
+    const query = document.getElementById('location-search').value.trim();
+    if (query) {
+        // Geocode the search query
+        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=PH&limit=1`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const lat = parseFloat(data[0].lat);
+                    const lng = parseFloat(data[0].lon);
+                    map.setView([lat, lng], 13);
+                    if (marker) {
+                        map.removeLayer(marker);
+                    }
+                    marker = L.marker([lat, lng]).addTo(map);
+                    selectedLatLng = { lat, lng };
+                } else {
+                    alert('Location not found. Try a different search.');
+                }
+            })
+            .catch(error => {
+                console.error('Error searching location:', error);
+                alert('Error searching location.');
+            });
+    }
+});
 
