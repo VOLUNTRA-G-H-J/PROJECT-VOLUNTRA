@@ -67,9 +67,36 @@ function displayPosts(posts) {
         const donationsCount = (post.donations || []).length;
         const volunteersCount = (post.volunteers || []).length;
 
+    postDiv.innerHTML = `
+            ${imageHtml}
+            ${post.lat && post.lng ? `<div class="post-map" id="map-${posts.indexOf(post)}" style="height: 150px; margin-top: 10px;"></div>` : ''}
+            <div class="post-actions">
+                <button class="edit-btn" data-index="${posts.indexOf(post)}">✏️ Edit</button>
+                <button class="delete-btn" data-index="${posts.indexOf(post)}">🗑️ Delete</button>
+                <button class="view-actions-btn" data-index="${posts.indexOf(post)}">📋 View Actions (${commentsCount + donationsCount + volunteersCount})</button>
+            </div>
+            <h3>${post.name} needs help</h3>
+            <p><strong>Category:</strong> ${categoryText}</p>
+            <p><strong>Location:</strong> ${post.location}</p>
+            <p><strong>Urgency:</strong> ${urgencyText}</p>
+            <p><strong>Description:</strong> ${post.description}</p>
+            <p class="meta">Posted on ${new Date(post.timestamp).toLocaleString()}</p>
+        `;
 
+        container.appendChild(postDiv);
 
-
-
-});
+        // Init map if location
+        if (post.lat && post.lng) {
+            setTimeout(() => {
+                const mapId = `map-${posts.indexOf(post)}`;
+                const smallMap = L.map(mapId).setView([post.lat, post.lng], 13);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(smallMap);
+                L.marker([post.lat, post.lng]).addTo(smallMap);
+            }, 100); // Delay to ensure DOM is ready
+        }
+    });
 }
+
+
+
+
