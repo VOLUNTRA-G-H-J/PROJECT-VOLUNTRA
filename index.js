@@ -1,13 +1,8 @@
-// Select all navigation links that point to a section
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function (event) {
-        const target = this.getAttribute("href");
+//button click effect
 
-        if (target.startsWith("#")) {
-            event.preventDefault(); // Prevent default jump
-            document.querySelector(target).scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.add("btn-clicked");
+        setTimeout(() => btn.classList.remove("btn-clicked"), 200);
     });
 });
