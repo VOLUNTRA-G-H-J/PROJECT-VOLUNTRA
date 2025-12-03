@@ -417,3 +417,41 @@ form.addEventListener("submit", function (event) {
 
     // Scroll to posts
     document.getElementById("posts-section").scrollIntoView({ behavior: "smooth" });
+    
+    function showMessage(message, type) {
+    // Remove any existing message
+    const existingMsg = document.querySelector(".message");
+    if (existingMsg) {
+        existingMsg.remove();
+    }
+
+    // Create message element
+    const msgDiv = document.createElement("div");
+    msgDiv.className = `message ${type}`;
+    msgDiv.textContent = message;
+
+    // Style the message
+    msgDiv.style.position = "fixed";
+    msgDiv.style.top = "20px";
+    msgDiv.style.right = "20px";
+    msgDiv.style.padding = "15px 20px";
+    msgDiv.style.borderRadius = "8px";
+    msgDiv.style.color = "white";
+    msgDiv.style.fontWeight = "bold";
+    msgDiv.style.zIndex = "9999";
+    msgDiv.style.maxWidth = "300px";
+
+    if (type === "success") {
+        msgDiv.style.backgroundColor = "#3B9797";
+    } else {
+        msgDiv.style.backgroundColor = "#BF092F";
+    }
+
+    // Append to body
+    document.body.appendChild(msgDiv);
+
+    // Remove after 5 seconds
+    setTimeout(() => {
+        msgDiv.remove();
+    }, 5000);
+}
