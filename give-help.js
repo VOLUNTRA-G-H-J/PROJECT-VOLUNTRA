@@ -96,6 +96,34 @@ const commentsCount = (post.comments || []).length;
     });
 }
 
+// Load posts on page load
+document.addEventListener("DOMContentLoaded", loadPosts);
+
+// Event handlers for buttons
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('comment-btn')) {
+        e.stopPropagation();
+        const index = parseInt(e.target.getAttribute('data-index'));
+        openCommentModal(index);
+    } else if (e.target.classList.contains('donate-btn')) {
+        e.stopPropagation();
+        const index = parseInt(e.target.getAttribute('data-index'));
+        openDonateModal(index);
+    } else if (e.target.classList.contains('volunteer-btn')) {
+        e.stopPropagation();
+        const index = parseInt(e.target.getAttribute('data-index'));
+        openVolunteerModal(index);
+    } else if (e.target.closest('.view-more')) {
+        e.stopPropagation();
+        const images = JSON.parse(e.target.closest('.view-more').getAttribute('data-images'));
+        showImageGallery(images);
+    } else if (e.target.closest('.post')) {
+        const postElement = e.target.closest('.post');
+        const index = parseInt(postElement.getAttribute('data-index'));
+        showPostDetails(index);
+    }
+});
+
 
 
 
