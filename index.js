@@ -60,3 +60,8 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+const footerYear = document.querySelector(".footer-bottom p");
+if (footerYear) {
+    footerYear.innerHTML = `© ${new Date().getFullYear()} Voluntra - Making the world better together `;
+}
