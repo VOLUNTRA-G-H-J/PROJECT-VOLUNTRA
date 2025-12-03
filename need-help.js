@@ -348,3 +348,72 @@ form.addEventListener("submit", function (event) {
         
     });
  });
+
+  function createPost(name, phone, location, category, urgency, description, imageData) {
+        // Create post object
+        const post = {
+            name,
+            phone,
+            location,
+            category,
+            urgency,
+            description,
+            image: imageData,
+            lat: selectedLatLng?.lat,
+            lng: selectedLatLng?.lng,
+            timestamp: new Date().toISOString()
+        };
+
+        // Get existing posts
+        const posts = JSON.parse(localStorage.getItem("voluntraPosts")) || [];
+    
+        if (editingIndex >= 0) {
+            // Update existing post
+            posts[editingIndex] = post;
+            editingIndex = -1;
+        } else {
+            // Add new post
+            posts.unshift(post); // Add to beginning
+        }
+    
+        try {
+            // Save posts
+            savePosts(posts);
+    
+            // Display updated posts
+            displayPosts(posts);
+    
+            // Show success message
+            showMessage("Your help request has been posted successfully! Helpers can now see and respond to it.", "success");
+    
+            // Reset form
+            form.reset();
+    
+            // Scroll to posts
+            document.getElementById("posts-section").scrollIntoView({ behavior: "smooth" });
+        } catch (error) {
+            console.error('Error saving post:', error);
+            showMessage("Error saving your request. Please try again.", "error");
+        }
+    }
+
+    // Get existing posts
+    const posts = JSON.parse(localStorage.getItem("voluntraPosts")) || [];
+
+    // Add new post
+    posts.unshift(post); // Add to beginning
+
+    // Save posts
+    savePosts(posts);
+
+    // Display updated posts
+    displayPosts(posts);
+
+    // Show success message
+    showMessage("Your help request has been posted successfully! Helpers can now see and respond to it.", "success");
+
+    // Reset form
+    form.reset();
+
+    // Scroll to posts
+    document.getElementById("posts-section").scrollIntoView({ behavior: "smooth" });
