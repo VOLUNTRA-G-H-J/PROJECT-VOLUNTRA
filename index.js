@@ -24,3 +24,19 @@ function showToast(message) {
         setTimeout(() => toast.remove(), 300);
     }, 2000);
 }
+
+// Add to specific buttons
+const needHelpBtn = document.querySelector("button[onclick*='need-help']");
+const giveHelpBtn = document.querySelector("button[onclick*='give-help']");
+
+if (needHelpBtn) {
+    needHelpBtn.addEventListener("click", () => {
+        showToast("Redirecting to the Help Page...");
+    });
+}
+
+if (giveHelpBtn) {
+    giveHelpBtn.addEventListener("click", () => {
+        showToast("Redirecting to the Volunteer Page...");
+    });
+}
