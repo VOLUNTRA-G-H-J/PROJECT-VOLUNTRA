@@ -256,3 +256,20 @@ document.getElementById('select-location-btn').addEventListener('click', functio
     }
 });
 
+    document.getElementById('confirm-location-btn').addEventListener('click', function() {
+    if (selectedLatLng) {
+        // Reverse geocode to get address
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${selectedLatLng.lat}&lon=${selectedLatLng.lng}`)
+            .then(response => response.json())
+            .then(data => {
+                const address = data.display_name || `${selectedLatLng.lat}, ${selectedLatLng.lng}`;
+                document.getElementById('location').value = address;
+                document.getElementById('map-modal').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error getting address:', error);
+                document.getElementById('location').value = `${selectedLatLng.lat}, ${selectedLatLng.lng}`;
+                document.getElementById('map-modal').style.display = 'none';
+            });
+    }
+});
