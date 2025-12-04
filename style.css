@@ -42,13 +42,13 @@ header {
 
 header h1 {
     font-size: 2em;
-    color: #F0E491;
+    color: #fff;
 }
 
 header nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #BBC863;
+    color: #fff;
     font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
@@ -130,7 +130,7 @@ header nav a:hover::after {
     background: linear-gradient(135deg, #BBC863, #658C58);
     padding: 20px;
     border-radius: 15px;
-    color: #F0E491;
+    color: #fff;
     font-weight: bold;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
@@ -196,7 +196,7 @@ header nav a:hover::after {
 .about-section {
     background: rgba(240, 228, 145, 0.1);
     padding: 60px 20px;
-    color: #31694E;
+    color: #fff;
     animation: fadeInUp 1s ease-out both;
 }
 
@@ -216,7 +216,7 @@ header nav a:hover::after {
 
 .about-box {
     background: linear-gradient(135deg, #658C58, #BBC863);
-    color: #F0E491;
+    color: #fff;
     width: 260px;
     padding: 25px;
     border-radius: 12px;
@@ -282,7 +282,7 @@ header nav a:hover::after {
 .founder-card {
     width: 260px;
     background: linear-gradient(135deg, #BBC863, #658C58);
-    color: #F0E491;
+    color: #fff;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
