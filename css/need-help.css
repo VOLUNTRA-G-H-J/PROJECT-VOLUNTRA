@@ -278,13 +278,15 @@ textarea {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .post {
     background: linear-gradient(135deg, #BBC863, #658C58);
     color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     position: relative;
