@@ -126,7 +126,7 @@ header nav a:hover::after {
 }
 
 .help-box {
-    width: 300px;
+    width: 400px;
     background: linear-gradient(135deg, #BBC863, #658C58);
     padding: 20px;
     border-radius: 15px;
@@ -217,7 +217,7 @@ header nav a:hover::after {
 .about-box {
     background: linear-gradient(135deg, #658C58, #BBC863);
     color: #fff;
-    width: 260px;
+    width: 350px;
     padding: 25px;
     border-radius: 12px;
     text-align: left;
@@ -280,7 +280,7 @@ header nav a:hover::after {
 }
 
 .founder-card {
-    width: 260px;
+    width: 350px;
     background: linear-gradient(135deg, #BBC863, #658C58);
     color: #fff;
     padding: 20px;
