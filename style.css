@@ -57,6 +57,9 @@ header nav a {
 header nav a:hover {
     color: #F0E491;
     transform: scale(1.1);
+    background: rgba(240, 228, 145, 0.2);
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 header nav a::after {
