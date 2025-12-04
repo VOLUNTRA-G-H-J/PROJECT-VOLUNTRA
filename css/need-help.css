@@ -275,12 +275,13 @@ textarea {
 }
 
 #posts-container {
-    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 0 20px;
 }
 
 .post {
