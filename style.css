@@ -85,6 +85,8 @@ header nav a:hover::after {
     min-height: 80vh;
     text-align: center;
     animation: fadeInUp 1s ease-out 0.5s both;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 @keyframes fadeInUp {
@@ -141,6 +143,8 @@ header nav a:hover::after {
 .content {
     padding: 50px 20px;
     text-align: center;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .help-container {
@@ -295,6 +299,8 @@ header nav a:hover::after {
     text-align: center;
     background: rgba(101, 140, 88, 0.1);
     animation: fadeInUp 1s ease-out both;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .founders-container {
@@ -363,6 +369,8 @@ header nav a:hover::after {
     padding: 40px 20px;
     color: #F0E491;
     animation: fadeInUp 1s ease-out both;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .footer-container {
