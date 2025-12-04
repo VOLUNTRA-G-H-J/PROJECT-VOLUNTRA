@@ -287,17 +287,20 @@ textarea {
 .post {
     background: linear-gradient(135deg, #BBC863, #658C58);
     color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     position: relative;
     transition: all 0.3s ease;
     animation: slideInLeft 1s ease-out both;
     animation-delay: calc(var(--i, 0) * 0.2s);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .post:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
 
@@ -324,17 +327,17 @@ textarea {
 }
 
 .post-image.single {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 15px;
+    border: 2px solid #3e3903;
 }
 
 .image-collage {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
-    margin-bottom: 15px;
     height: 200px;
 }
 
@@ -342,12 +345,18 @@ textarea {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    border: 2px solid #060605;
 }
 
 .image-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.1);
 }
 
 .view-more {
@@ -490,6 +499,7 @@ footer.footer {
     max-height: 80vh;
     overflow-y: auto;
     animation: zoomIn 0.5s ease-out;
+    border: 2px solid #F0E491;
 }
 
 @keyframes zoomIn {

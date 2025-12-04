@@ -68,6 +68,7 @@ function displayPosts(posts) {
         const volunteersCount = (post.volunteers || []).length;
 
     postDiv.innerHTML = `
+    <br>
             ${imageHtml}
             ${post.lat && post.lng ? `<div class="post-map" id="map-${posts.indexOf(post)}" style="height: 150px; margin-top: 10px;"></div>` : ''}
             <div class="post-actions">
@@ -75,6 +76,7 @@ function displayPosts(posts) {
                 <button class="delete-btn" data-index="${posts.indexOf(post)}">🗑️ Delete</button>
                 <button class="view-actions-btn" data-index="${posts.indexOf(post)}">📋 View Actions (${commentsCount + donationsCount + volunteersCount})</button>
             </div>
+            
             <h3>${post.name} needs help</h3>
             <p><strong>Category:</strong> ${categoryText}</p>
             <p><strong>Location:</strong> ${post.location}</p>
