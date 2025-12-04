@@ -196,6 +196,13 @@ function showPostDetails(index) {
     `;
 }
 
+// Close modals
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+        this.closest('.modal').style.display = 'none';
+    });
+});
+
 
  }); 
  }
