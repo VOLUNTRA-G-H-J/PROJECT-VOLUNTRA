@@ -77,11 +77,12 @@ header nav a:hover::after {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(49, 105, 78, 0.8), rgba(49, 105, 78, 0.8)), url('https://source.unsplash.com/featured/?volunteers,community');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('media/giphy.gif');
     background-size: cover;
     background-position: center;
-    color: #F0E491;
-    padding: 80px 20px;
+    color: #fff;
+    padding: 120px 20px;
+    min-height: 80vh;
     text-align: center;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
@@ -98,17 +99,42 @@ header nav a:hover::after {
 }
 
 .hero h2 {
-    font-size: 3em;
+    font-size: 5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.8);
+    animation: bounceIn 1s ease-out, bounce 2s infinite 2s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 24px;
     margin-top: 10px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5), 0 0 10px rgba(0,0,0,0.8);
+    animation: fadeInUp 2s ease-out 2s both;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #F0E491; }
 }
 
 /* Content sections */
