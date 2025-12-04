@@ -1,0 +1,71 @@
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #132440; /* dark navy */
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+/* header */
+header {
+    background: #BF092F; /* main red */
+    color: white;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #3B9797;
+}
+
+/* herosection */
+.hero {
+    background: linear-gradient(rgba(22, 71, 106, 0.8), rgba(22, 71, 106, 0.8)), url('https://source.unsplash.com/featured/?help,support');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*content section */
+.content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.form-section {
+    background: #16476A;
+    padding: 60px 20px;
+}
+
+.info-section {
+    background: #132440;
+}
