@@ -322,3 +322,24 @@ footer.footer {
     padding-top: 20px;
     border-top: 1px solid #3B9797;
 }
+/* responsive design */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        flex: none;
+        height: 50vh;
+    }
+}
