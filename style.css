@@ -29,8 +29,7 @@ header {
     color: #F0E491;
     padding: 22px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     animation: slideDown 0.8s ease-out;
 }
@@ -41,17 +40,28 @@ header {
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 3em;
     color: #fff;
+      padding-left: 30px;
+      justify-content: center;
+}
+
+header nav {
+    font-size:larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 300px;
 }
 
 header nav a {
-    margin-left: 20px;
+    margin: 0 20px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
+    font-size: larger;
 }
 
 header nav a:hover {
@@ -80,7 +90,7 @@ header nav a:hover::after {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('media/giphy.gif');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('media/istockphoto-481135937-1024x1024.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
