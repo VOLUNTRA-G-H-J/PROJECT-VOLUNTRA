@@ -113,9 +113,11 @@ header nav a:hover::after {
 /* Posts section */
 #posts-container {
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     text-align: left;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -160,17 +162,17 @@ header nav a:hover::after {
 }
 
 .post-image.single {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 15px;
+    border: 2px solid #F0E491;
 }
 
 .image-collage {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
-    margin-bottom: 15px;
     height: 200px;
 }
 
@@ -178,12 +180,18 @@ header nav a:hover::after {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    border: 2px solid #F0E491;
 }
 
 .image-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.1);
 }
 
 .view-more {
