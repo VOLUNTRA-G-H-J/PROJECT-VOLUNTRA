@@ -69,6 +69,21 @@ header nav a:hover::after {
     left: 0;
 }
 
+header h1 {
+    font-size: 2em;
+    color: #fff;
+    padding-left: 50px;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 100px;
+    border: 3px solid #F0E491;
+}
+
 /* Hero section */
 .hero {
     background: linear-gradient(rgba(49, 105, 78, 0.8), rgba(49, 105, 78, 0.8)), url('https://source.unsplash.com/featured/?help,support');

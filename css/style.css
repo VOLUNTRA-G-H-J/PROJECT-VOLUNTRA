@@ -90,7 +90,6 @@ header nav a:hover::after {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('media/istockphoto-481135937-1024x1024.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -179,6 +178,10 @@ header nav a:hover::after {
     transition: all 0.3s ease;
     animation: bounceIn 1s ease-out both;
     animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+.help-box:first-child {
+    border-right: 3px solid #F0E491;
 }
 
 .help-box:nth-child(1) { --i: 1; }
