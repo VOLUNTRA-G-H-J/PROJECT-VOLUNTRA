@@ -1,0 +1,105 @@
+/*global style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #132440; /* dark navy */
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/*header */
+
+header {
+    background: #BF092F; /* main red */
+    color: white;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #3B9797;
+}
+
+/*hero section */
+
+.hero {
+    background: linear-gradient(rgba(22, 71, 106, 0.8), rgba(22, 71, 106, 0.8)), url('https://source.unsplash.com/featured/?volunteers,community');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/*help section */
+
+.content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.help-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: nowrap; /* everything on ONE LINE */
+}
+
+.help-box {
+    width: 300px;
+    background: #3B9797; /* teal */
+    padding: 20px;
+    border-radius: 10px;
+    color: #132440;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.help-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #BF092F; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.help-box button:hover {
+    background: #132440;
+}
+
+/*about section */
+
+#about {
+    background: #132440;
+    padding: 50px;
+    color: #fff;
+}
