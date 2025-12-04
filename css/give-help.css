@@ -92,6 +92,22 @@ header nav a:hover::after {
     background: rgba(101, 140, 88, 0.1);
     overflow-y: auto;
     animation: fadeInUp 1s ease-out both;
+    text-align: center;
+}
+
+.left-panel h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #F0E491;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px #F0E491;
+    animation: bounceIn 1s ease-out;
+}
+
+.left-panel p {
+    font-size: 1.5em;
+    color: #BBC863;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 2s ease-out 1s both;
 }
 
 .right-panel {
@@ -118,6 +134,7 @@ header nav a:hover::after {
     z-index: 10;
     border: 2px solid #F0E491;
 }
+
 
 /* Posts section */
 #posts-container {
