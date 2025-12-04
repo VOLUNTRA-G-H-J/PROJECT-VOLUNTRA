@@ -203,6 +203,76 @@ document.querySelectorAll('.close').forEach(closeBtn => {
     });
 });
 
+// Handle form submissions for actions
+document.getElementById('comment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const index = parseInt(this.closest('.modal').getAttribute('data-post-index'));
+    const comment = document.getElementById('comment-text').value.trim();
+    const imageFile = document.getElementById('comment-image').files[0];
+
+    if (comment || imageFile) {
+        const processComment = imageFile ? [imageFile].map(file => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = () => reject(new Error('Failed to read image'));
+                reader.readAsDataURL(file);
+            });
+        }) : [Promise.resolve(null)];
+
+        Promise.allSettled(processComment).then(results => {
+            const imageData = results[0].status === 'fulfilled' ? results[0].value : null;
+            const fullComment = imageData ? `${comment}<br><img src="${imageData}" style="max-width:100px;">` : comment;
+            addComment(index, fullComment);
+            this.reset();
+            this.closest('.modal').style.display = 'none';
+        });
+    }
+});
+
+document.getElementById('donate-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const index = parseInt(this.closest('.modal').getAttribute('data-post-index'));
+    const type = document.getElementById('donate-type').value;
+    const message = document.getElementById('donate-message').value.trim();
+
+    let donationText = '';
+    if (type === 'money') {
+        const amount = document.getElementById('donate-amount').value;
+        const method = document.getElementById('payment-method').value;
+        if (amount && method) {
+            donationText = `$${amount} via ${method} - ${message || 'No message'}`;
+        }
+    } else {
+        const item = document.getElementById('donate-item').value.trim();
+        if (item) {
+            donationText = `${type}: ${item} - ${message || 'No message'}`;
+        }
+    }
+
+    if (donationText) {
+        addDonation(index, donationText);
+        this.reset();
+        document.getElementById('money-options').style.display = 'none';
+        document.getElementById('item-options').style.display = 'none';
+        this.closest('.modal').style.display = 'none';
+    }
+});
+
+document.getElementById('volunteer-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const index = parseInt(this.closest('.modal').getAttribute('data-post-index'));
+    const name = document.getElementById('volunteer-name').value.trim();
+    const type = document.getElementById('volunteer-type').value;
+    const skills = document.getElementById('volunteer-skills').value.trim();
+
+    if (name) {
+        const helpType = type ? `${type}: ` : '';
+        addVolunteer(index, `${name} - ${helpType}${skills || 'Not specified'}`);
+        this.reset();
+        this.closest('.modal').style.display = 'none';
+    }
+});
 
  }); 
  }
