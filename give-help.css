@@ -16,3 +16,24 @@ body {
 h1, h2, h3 {
     font-weight: 700;
 }
+/* Header Styles */
+header {
+    background: #BF092F; /* main red */
+    color: white;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #3B9797;
+}
